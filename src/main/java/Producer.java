@@ -27,7 +27,7 @@ import javax.jms.MessageProducer;
 
 import java.io.Console;
 
-class Producer {
+public class Producer {
 
     public static void main(String[] args) throws Exception {
 
