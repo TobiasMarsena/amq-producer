@@ -42,32 +42,13 @@
 
   </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-
-      <!-- include all the dependencies into the jar so it's easier to execute the example -->
-      <plugin>
-        <groupId>org.fusesource.mvnplugins</groupId>
-        <artifactId>maven-uberize-plugin</artifactId>
-        <version>1.14</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals><goal>uberize</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
-
-    </plugins>
-  </build>
+	<build>
+	    <plugins>
+	        <plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	        </plugin>
+	    </plugins>
+	</build>
 
 </project>
