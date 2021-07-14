@@ -77,21 +77,25 @@ public class Producer {
         /* This section of code simply reads input from the console and then sends that
          * input as JMS Message to the ActiveMQ broker.
          */
-        Console c = System.console();
-        String response;
-        do {
-        	
-            response = c.readLine("Enter message: ");
-            
-            /* Every time you want to send a message to a Queue or Topic you have to create
-             * a Message object. There are a few different kinds (text, binary, object, 
-             * IO stream). In this case we are just sending a text message which is one of
-             * the simplest. JMS Topics and Queues support the same message types.
-             */
-            TextMessage msg = session.createTextMessage(response);
-            producer.send(msg);
-            
-        } while (!response.equalsIgnoreCase("SHUTDOWN"));
+//        Console c = System.console();
+//        String response;
+//        do {
+//        	
+//            response = c.readLine("Enter message: ");
+//            
+//            /* Every time you want to send a message to a Queue or Topic you have to create
+//             * a Message object. There are a few different kinds (text, binary, object, 
+//             * IO stream). In this case we are just sending a text message which is one of
+//             * the simplest. JMS Topics and Queues support the same message types.
+//             */
+//            TextMessage msg = session.createTextMessage(response);
+//            producer.send(msg);
+//            
+//        } while (!response.equalsIgnoreCase("SHUTDOWN"));
+        for (int i = 0; i < 5; i++) {
+			TextMessage msg = session.createTextMessage("Message no: " + i);
+			producer.send(msg);
+		}
         
         /* As is the case with most enterprise resources, you want to shut a JMS connection
          * down when you are done using it.  This tells the JMS broker that it can free
