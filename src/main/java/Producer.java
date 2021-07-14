@@ -43,7 +43,7 @@ public class Producer {
     	 *  to the protocol, AMQP. AMQP is only one of ten protocols currently supported by
     	 *  ActiveMQ.
     	 */
-    	JmsConnectionFactory factory = new JmsConnectionFactory("amqp://amq-broker-amqp-0-svc.amq-dev.svc.cluster.local:5672/?&jms.username=admin&jms.password=admin");
+    	JmsConnectionFactory factory = new JmsConnectionFactory("amqp://amq-broker-amqp-0-svc.amq-dev.svc.cluster.local:5672/?jms.username=admin&jms.password=admin");
         Connection connection = factory.createConnection();
         connection.start();
         
