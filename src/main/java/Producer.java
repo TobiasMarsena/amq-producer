@@ -65,8 +65,8 @@ public class Producer {
          *  more detail the blog post, "5 Minutes or Less: ActiveMQ with JMS Queues and Topics".
          */
         Destination destination = null;     	
-    	destination = session.createQueue("MyQueue");	      	
-//    	destination = session.createTopic("MyTopic");      
+//    	destination = session.createQueue("MyQueue");	      	
+    	destination = session.createTopic("MyTopic");      
         
         /*  A MessageProducer is specific to a destination - it can only send 
          *  messages to one Topic or Queue. 
