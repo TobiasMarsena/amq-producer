@@ -96,7 +96,7 @@ public class Producer {
 			TextMessage msg = session.createTextMessage("Message no: " + i);
 			producer.send(msg);
 		}
-        System.out.println("Sent 5 messages successfully.");
+        System.out.println("Sent 3 messages successfully.");
         
         /* As is the case with most enterprise resources, you want to shut a JMS connection
          * down when you are done using it.  This tells the JMS broker that it can free
@@ -104,6 +104,7 @@ public class Producer {
          * scalable.
          */
         connection.close();
+        Thread.sleep(Long.MAX_VALUE);
 //        System.exit(1);
     }
 }
