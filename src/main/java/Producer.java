@@ -92,7 +92,7 @@ public class Producer {
 //            producer.send(msg);
 //            
 //        } while (!response.equalsIgnoreCase("SHUTDOWN"));
-        for (int i = 0; i < 5; i++) {
+        for (int i = 1; i < 4; i++) {
 			TextMessage msg = session.createTextMessage("Message no: " + i);
 			producer.send(msg);
 		}
@@ -104,6 +104,6 @@ public class Producer {
          * scalable.
          */
         connection.close();
-        System.exit(1);
+//        System.exit(1);
     }
 }
